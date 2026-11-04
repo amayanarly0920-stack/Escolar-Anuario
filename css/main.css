@@ -1,0 +1,91 @@
+/* ===== Paleta institucional ===== */
+:root{
+  --verde:#1a8a3a; --amarillo:#f4c20d; --rojo:#d62828; --negro:#161616; --blanco:#faf8f1;
+  --fondo:#e9e4d6; --fuente:"Trebuchet MS","Segoe UI",system-ui,sans-serif;
+  --manuscrita:"Segoe Script","Brush Script MT",cursive;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--fondo);color:var(--negro);font-family:var(--fuente);min-height:100vh;display:flex;flex-direction:column;align-items:center}
+.oculto{display:none !important}
+
+/* ===== Barra y botones ===== */
+.barra{width:100%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;padding:10px 16px}
+.barra h1{font-size:16px;margin:0}
+.herramientas{display:flex;gap:6px;flex-wrap:wrap}
+button,.boton{font:inherit;font-weight:700;border:0;border-radius:20px;padding:8px 14px;background:var(--verde);color:#fff;cursor:pointer}
+button:disabled{opacity:.4;cursor:default}
+.secundario{background:var(--amarillo);color:var(--negro)} .peligro{background:var(--rojo)}
+main{display:flex;flex-direction:column;align-items:center;width:100%}
+
+/* ===== El libro ===== */
+.libro{width:min(94vw,560px);perspective:1800px}
+.pagina{position:relative;aspect-ratio:5/7;background:var(--blanco);border-radius:6px 16px 16px 6px;
+  box-shadow:0 14px 30px rgba(0,0,0,.35),inset 10px 0 14px -10px rgba(0,0,0,.4);
+  padding:12% 5% 12%;overflow-x:hidden;overflow-y:auto;transform-origin:left center}
+.pagina::before,.pagina::after{content:"";position:absolute;left:0;right:0;height:8%;pointer-events:none;
+  background:linear-gradient(100deg,var(--verde) 0 30%,var(--amarillo) 30% 50%,var(--rojo) 50% 70%,var(--negro) 70%)}
+.pagina::before{top:0} .pagina::after{bottom:0}
+
+/* ===== Efecto de pasar página (lo activa JavaScript) ===== */
+.entra{animation:entra .5s ease-out} .entra-atras{animation:entraAtras .5s ease-out}
+@keyframes entra{from{transform:rotateY(70deg) translateX(30px);opacity:0}}
+@keyframes entraAtras{from{transform:rotateY(-70deg) translateX(-30px);opacity:0}}
+
+/* ===== Portada y cierre ===== */
+.portada,.cierre{display:flex;flex-direction:column;align-items:center;text-align:center;gap:2%;min-height:100%}
+.escudo{width:26%;aspect-ratio:1;object-fit:contain}
+.portada small{letter-spacing:.2em;font-weight:700}
+.portada h2{margin:0;font-size:clamp(20px,6vw,32px)}
+.portada .titulo{font:italic 900 clamp(46px,15vw,82px)/1 var(--manuscrita);margin:0}
+.promocion{background:var(--amarillo);padding:0 16px;transform:rotate(-3deg);font:italic 800 clamp(24px,7vw,40px) var(--manuscrita)}
+.lema{font:italic clamp(14px,3.8vw,20px) var(--manuscrita);margin:3% 0}
+.foto-portada{width:100%;flex:1;min-height:120px;object-fit:cover;border-radius:8px}
+.cierre{justify-content:center}
+.cierre .grande{font:italic 800 clamp(26px,8vw,44px) var(--manuscrita)}
+
+/* ===== Página de cada estudiante ===== */
+.estudiante-pagina{font-size:calc(clamp(9px,2.5vw,13px) * var(--k,1))}
+.estudiante-pagina header{display:flex;align-items:center;gap:8px;font-weight:700;margin-bottom:3%;font-size:.95em}
+.estudiante-pagina header img{width:11%;object-fit:contain}
+.estudiante-pagina header strong{display:block;font-size:1.4em}
+.fila{display:grid;grid-template-columns:36% 1fr;gap:3%}
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:3%}
+.marco{background:#fff;padding:5%;border:3px solid var(--amarillo);box-shadow:0 2px 8px rgba(0,0,0,.35);aspect-ratio:3/4}
+.marco img{width:100%;height:100%;object-fit:cover;display:block}
+.sin-imagen{background:#bbb}
+article.caja,.caja{border:2px solid;border-radius:12px;padding:2% 3%;margin-bottom:3%}
+.caja h2{display:inline-block;margin:0 0 3px;font-size:1em;padding:1px 9px;border-radius:10px}
+.caja p,.caja li{margin:2px 0;line-height:1.45;white-space:pre-wrap}
+.caja ul{margin:0;padding-left:18px}
+.c-amarilla{border-color:var(--amarillo)} .c-amarilla h2{background:#fbe9a0}
+.c-roja{border-color:var(--rojo)} .c-roja h2{background:#f7c5c5}
+.c-verde{border-color:var(--verde)} .c-verde h2{background:#bfe6c8}
+.c-gris{border-color:#888} .c-gris h2{background:#ddd}
+.cargo{font-weight:700;color:var(--verde);margin:0 0 6px}
+.firma{height:60px;border:1px dashed #888;border-radius:6px;display:flex;justify-content:center;align-items:center}
+.firma img{max-width:100%;max-height:100%}
+
+/* ===== Modo edición ===== */
+.edicion input[type=text],.edicion textarea{width:100%;font:inherit;padding:3px 5px;margin:2px 0;border:1px dashed #888;border-radius:6px;background:#fffbe0}
+.edicion textarea{resize:vertical}
+.subir{display:block;margin-top:4px;padding:3px 8px;text-align:center;font-size:11px;font-weight:700;background:var(--amarillo);border-radius:12px;cursor:pointer}
+
+/* ===== Navegación ===== */
+.nav{display:flex;gap:14px;align-items:center;margin:14px 0 4px}
+.aviso{font-size:13px;min-height:18px;text-align:center;margin:4px 12px}
+footer{font-size:12px;padding:10px 12px 20px;text-align:center}
+
+.portada {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem 1rem 0.5rem;
+}
+.portada .escudo {
+  width: 130px;
+  max-width: 40vw;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anuario Promoción 2026 · I.E. Eugenio Ferro Falla</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <header class="barra">
+    <h1>📖 Anuario · Promoción 2026</h1>
+    <div class="herramientas">
+      <button id="btnEditar">✏️ Editar</button>
+      <button id="btnGuardar" class="secundario oculto">⬇ Descargar respaldo</button>
+      <label id="lblCargar" class="boton secundario oculto">⬆ Cargar respaldo<input type="file" id="inpCargar" accept=".json" hidden></label>
+      <button id="btnReset" class="peligro oculto">↺ Restablecer</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="libro" class="libro" aria-live="polite"></section>
+    <nav class="nav">
+      <button id="btnAnterior">◀ Anterior</button>
+      <span id="contador"></span>
+      <button id="btnSiguiente">Siguiente ▶</button>
+    </nav>
+    <p id="aviso" class="aviso"></p>
+  </main>
+
+  <footer>I.E. Eugenio Ferro Falla · Más que una institución, una familia</footer>
+  <script src="js/main.js"></script>
+
+
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anuario Promoción 2026 · I.E. Eugenio Ferro Falla</title>
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .portada {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 1.5rem 1rem 0.5rem;
+    }
+    .portada .escudo {
+      width: 130px;
+      max-width: 40vw;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <header class="barra">
+    <h1>📖 Anuario · Promoción 2026</h1>
+    <div class="herramientas">
+      <button id="btnEditar">✏️ Editar</button>
+      <button id="btnGuardar" class="secundario oculto">⬇ Descargar respaldo</button>
+      <label id="lblCargar" class="boton secundario oculto">⬆ Cargar respaldo<input type="file" id="inpCargar" accept=".json" hidden></label>
+      <button id="btnReset" class="peligro oculto">↺ Restablecer</button>
+    </div>
+  </header>
+
+  <!-- Portada: escudo debajo del título, centrado -->
+  <section class="portada">
+    <img class="escudo" src="img/Captura_de_pantalla_2026-11-03_190946-removebg-preview.png" alt="Escudo de la I.E. Eugenio Ferro Falla">
+  </section>
+
+  <main>
+    <section id="libro" class="libro" aria-live="polite"></section>
+    <nav class="nav">
+      <button id="btnAnterior">◀ Anterior</button>
+      <span id="contador"></span>
+      <button id="btnSiguiente">Siguiente ▶</button>
+    </nav>
+    <p id="aviso" class="aviso"></p>
+  </main>
+
+  <footer>I.E. Eugenio Ferro Falla · Más que una institución, una familia</footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
+</body>
+</html>
